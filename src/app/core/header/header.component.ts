@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  public isLogin = false;
+  public isLogin = this.authService.isLoggedIn;
+
+  constructor(private authService: AuthService) {}
 
   public onLogin = () => {
-    this.isLogin = true;
+    this.authService.login();
   };
 
   public onLogout = () => {
-    this.isLogin = false;
+    this.authService.logout();
   };
 }
