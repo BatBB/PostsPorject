@@ -1,0 +1,10 @@
+<ng-container *ngIf="post">
+  <mat-card class="post" (click)="toPost(post.id)">
+    <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      {{ post.body }}
+    </mat-card-content>
+  </mat-card>
+</ng-container>

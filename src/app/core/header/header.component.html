@@ -1,6 +1,6 @@
 <div class="container">
   <header class="header">
-    <a mat-button>Posts</a>
+    <a mat-button [routerLink]="['/posts']" routerLinkActive="router-link-active">Posts</a>
     <div class="header__auth">
       <ng-container *ngIf="userName() !== null">
         {{ userName() }}

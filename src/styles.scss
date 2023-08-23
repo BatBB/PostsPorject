@@ -15,3 +15,8 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+mat-card-title::first-letter,
+mat-card-content::first-letter {
+  text-transform: uppercase;
+}
