@@ -1,0 +1,28 @@
+mat-card {
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+  }
+}

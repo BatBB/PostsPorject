@@ -2,6 +2,10 @@
   <header class="header">
     <a mat-button>Posts</a>
     <div class="header__auth">
+      <ng-container *ngIf="userName() !== null">
+        {{ userName() }}
+      </ng-container>
+
       <ng-container *ngIf="!isLogin(); else logout">
         <button mat-raised-button color="primary" class="header__auth-btn" (click)="onLogin()">
           Login
