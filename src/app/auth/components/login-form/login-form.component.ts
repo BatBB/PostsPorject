@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { FormType, LoginData } from 'src/app/models/login-form.model';
 
@@ -17,9 +18,13 @@ export class LoginFormComponent {
     password: new FormControl('', { nonNullable: true, validators: [Validators.required] }),
   });
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   public login = () => {
     this.authService.login(this.loginForm.getRawValue());
+    this.router.navigate(['/posts']);
   };
 }
